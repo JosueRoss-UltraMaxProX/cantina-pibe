@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>Cantina da Pibe</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Cantina da Pibe</h1>
+            <div class="cart-info">
+                <span id="cart-count">Carrinho (0)</span>
+                <span id="cart-total">R$ 0,00</span>
+            </div>
+        </header>
+
+        <nav class="categories">
+            <button class="category-btn active" data-category="todos">Todos</button>
+            <button class="category-btn" data-category="Lanches">Lanches</button>
+            <button class="category-btn" data-category="Bebidas">Bebidas</button>
+            <button class="category-btn" data-category="Doces">Doces</button>
+            <button class="category-btn" data-category="Salgados">Salgados</button>
+        </nav>
+
+        <main class="products-grid" id="products-grid">
+            <!-- Produtos serão inseridos aqui via JavaScript -->
+        </main>
+
+        <div id="cart-modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Carrinho de Compras</h2>
+                <div id="cart-items"></div>
+                <div class="cart-footer">
+                    <h3>Total: <span id="modal-total">R$ 0,00</span></h3>
+                    <button class="btn-primary" onclick="finalizarPedido()">Finalizar Pedido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

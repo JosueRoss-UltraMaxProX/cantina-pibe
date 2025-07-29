@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="theme-color" content="#E91E63">
+  <meta name="description" content="Sistema de vendas da Cantina da Pibe">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Cantina da Pibe">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/icons/icon-192x192.png">
+  <title>Cantina da Pibe</title>
+  <style>
+    html, body, #root {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      -webkit-tap-highlight-color: transparent;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+      user-select: none;
+    }
+    
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    
+    /* Classes utilitárias para impressão */
+    @media print {
+      body {
+        margin: 0;
+        padding: 10px;
+        font-size: 12px;
+      }
+      
+      /* Layout cupom fiscal */
+      .print\\:cupom {
+        max-width: 300px !important;
+        margin: 0 auto !important;
+        font-family: monospace !important;
+        font-size: 11px !important;
+        line-height: 1.4 !important;
+      }
+      
+      /* Ocultar na impressão */
+      .print\\:hidden {
+        display: none !important;
+      }
+      
+      /* Mostrar apenas na impressão */
+      .print\\:block {
+        display: block !important;
+      }
+      
+      .print\\:text-center {
+        text-align: center !important;
+      }
+      
+      .print\\:border-dashed {
+        border-bottom: 1px dashed #000 !important;
+        padding-bottom: 5px !important;
+        margin-bottom: 5px !important;
+      }
+      
+      .print\\:font-mono {
+        font-family: 'Courier New', monospace !important;
+      }
+      
+      .print\\:text-sm {
+        font-size: 10px !important;
+      }
+      
+      .print\\:text-lg {
+        font-size: 14px !important;
+      }
+      
+      .print\\:font-bold {
+        font-weight: bold !important;
+      }
+      
+      .print\\:mt-2 {
+        margin-top: 8px !important;
+      }
+      
+      .print\\:mb-2 {
+        margin-bottom: 8px !important;
+      }
+      
+      /* Forçar cores na impressão */
+      * {
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      
+      /* Ocultar elementos interativos */
+      button,
+      [role="button"],
+      .no-print {
+        display: none !important;
+      }
+    }
+    
+    /* Classes que só aparecem na tela */
+    @media screen {
+      .screen\\:hidden {
+        display: none !important;
+      }
+    }
+    
+    /* Garantir que o conteúdo de impressão seja visível */
+    .print-only {
+      display: none;
+    }
+    
+    @media print {
+      .print-only {
+        display: block !important;
+      }
+      
+      /* Forçar visibilidade do container principal */
+      #root {
+        display: block !important;
+        visibility: visible !important;
+      }
+      
+      /* Resetar estilos que podem ocultar conteúdo */
+      * {
+        visibility: visible !important;
+        opacity: 1 !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <noscript>Você precisa habilitar o JavaScript para usar este aplicativo.</noscript>
+  <script src="/register-sw.js"></script>
+</body>
+</html>
